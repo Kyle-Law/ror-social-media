@@ -1,3 +1,50 @@
+GIT
+  remote: https://github.com/rspec/rspec-core.git
+  revision: e7c5d030966a7e8dad3e0a67c61920c4f2437c15
+  branch: master
+  specs:
+    rspec-core (3.10.0.pre)
+      rspec-support (= 3.10.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-expectations.git
+  revision: e63ff4765e1cd2798b02ddddad259f1104ef87a5
+  branch: master
+  specs:
+    rspec-expectations (3.10.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.10.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-mocks.git
+  revision: 0a52e0a86b126b4bab94d277b2ad99a7492dc37d
+  branch: master
+  specs:
+    rspec-mocks (3.10.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.10.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-rails.git
+  revision: 01704c50c146f720db914724c25681781ecefb23
+  branch: master
+  specs:
+    rspec-rails (4.1.0.pre)
+      actionpack (>= 4.2)
+      activesupport (>= 4.2)
+      railties (>= 4.2)
+      rspec-core (= 3.10.0.pre)
+      rspec-expectations (= 3.10.0.pre)
+      rspec-mocks (= 3.10.0.pre)
+      rspec-support (= 3.10.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-support.git
+  revision: 6447b0c2c9d1cd3e1504784fb85675ca9ae7b7c3
+  branch: master
+  specs:
+    rspec-support (3.10.0.pre)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -59,13 +106,17 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
+    database_cleaner (1.8.5)
+    database_cleaner-active_record (1.8.0)
+      activerecord
+      database_cleaner (~> 1.8.0)
     devise (4.7.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    diff-lcs (1.3)
+    diff-lcs (1.4.4)
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.12.2)
@@ -138,19 +189,6 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.4)
-    rspec (3.9.0)
-      rspec-core (~> 3.9.0)
-      rspec-expectations (~> 3.9.0)
-      rspec-mocks (~> 3.9.0)
-    rspec-core (3.9.1)
-      rspec-support (~> 3.9.1)
-    rspec-expectations (3.9.1)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.9.0)
-    rspec-mocks (3.9.1)
-      diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.9.0)
-    rspec-support (3.9.2)
     rubocop (0.80.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -212,13 +250,18 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   coffee-rails (~> 4.2)
+  database_cleaner-active_record
   devise
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   puma (~> 3.12)
   rails (~> 5.2.4)
-  rspec
+  rspec-core!
+  rspec-expectations!
+  rspec-mocks!
+  rspec-rails!
+  rspec-support!
   rubocop
   sass-rails (~> 5.0)
   spring
