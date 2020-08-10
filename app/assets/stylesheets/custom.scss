@@ -21,21 +21,27 @@ a {
   display: flex;
   justify-content: space-between;
   padding: 16px 48px;
+  align-items: center;
   // background-color: var(--primary-color);
   color: var(--on-background);
 
   a {
+    letter-spacing: 2px;
     color: var(--on-background);
     text-transform: uppercase;
     font-weight: 900;
+    border-bottom: 3px solid rgba(0, 0, 0, 0);
   }
 
   .active a {
-    color: #fff;
+    // color: #fff;
+    border-bottom: 3px solid var(--primary-color);
   }
 
-  a:hover {
-    color: #fff;
+  .menu-item a:hover {
+    // color: #fff;
+    // filter: brightness(0.9);
+    border-bottom: 3px solid var(--primary-color);
   }
 
   .menu {
@@ -98,6 +104,7 @@ a {
     padding: 8px;
     margin: 4px 0;
     border-radius: 4px;
+    background-color: var(--background);
   }
 
   .field_with_errors {

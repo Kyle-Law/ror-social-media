@@ -50,9 +50,7 @@ body {
   align-items: center;
   z-index: 100;
   grid-auto-flow: column;
-  // position: fixed;
-  // right: 25px;
-  // top: 30px;
+  margin-right: 10px;
 }
 
 .theme-switch-wrapper span {
@@ -101,7 +99,7 @@ body {
 }
 
 input:checked + .slider {
-  // background: var(--on-background);
+  background: var(--primary-color);
 }
 
 input:checked + .slider::before {

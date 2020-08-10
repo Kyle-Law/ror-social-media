@@ -18,7 +18,7 @@ console.log("reset js");
 var toggleSwitch = document.querySelector('input[type="checkbox"]');
 var nav = document.getElementById("nav");
 var toggleIcon = document.getElementById("toggle-icon");
-// const textBox = document.getElementById("text-box");
+// var textBox = document.getElementById("post-content");
 
 // Dark or Light Images
 // function imageMode(color) {
