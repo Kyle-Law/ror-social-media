@@ -2,9 +2,11 @@
   <ul class="users-list">
     <% @users.each do |user| %>
       <li>
-        Name: <%= user.name %>
+        Name: 
         <span class="profile-link">
-          <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
+          <%= link_to user.name,  user_path(user), class: 'profile-link' %>
+          <%= link_to 'Add Friend',  friends_path(receiver_id: user), class: 'add-friend-link' %>
+          Testing <%= user.id%> hehe<%= current_user.id%>
         </span>
       </li>
     <% end %>
