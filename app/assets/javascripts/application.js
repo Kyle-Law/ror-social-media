@@ -14,9 +14,10 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-const toggleSwitch = document.querySelector('input[type="checkbox"]');
-const nav = document.getElementById("nav");
-const toggleIcon = document.getElementById("toggle-icon");
+console.log("reset js");
+var toggleSwitch = document.querySelector('input[type="checkbox"]');
+var nav = document.getElementById("nav");
+var toggleIcon = document.getElementById("toggle-icon");
 // const textBox = document.getElementById("text-box");
 
 // Dark or Light Images
@@ -28,6 +29,7 @@ const toggleIcon = document.getElementById("toggle-icon");
 
 // Dark Mode Styles
 function darkMode() {
+  console.log("nav", nav);
   nav.style.backgroundColor = "rgb(0 0 0 / 50%)";
   // textBox.style.backgroundColor = "rgb(255 255 255 / 50%)";
   toggleIcon.children[0].textContent = "Dark Mode";
@@ -38,7 +40,7 @@ function darkMode() {
 // Light Mode Styles
 function lightMode() {
   nav.style.backgroundColor = "rgb(255 255 255 / 50%)";
-  textBox.style.backgroundColor = "rgb(0 0 0 / 50%)";
+  // textBox.style.backgroundColor = "rgb(0 0 0 / 50%)";
   toggleIcon.children[0].textContent = "Light Mode";
   toggleIcon.children[1].classList.replace("fa-moon", "fa-sun");
   // imageMode("light");
@@ -62,7 +64,7 @@ function switchTheme(event) {
 toggleSwitch.addEventListener("change", switchTheme);
 
 // Check Local Storage for Theme
-const currentTheme = localStorage.getItem("theme");
+var currentTheme = localStorage.getItem("theme");
 
 if (currentTheme) {
   document.documentElement.setAttribute("data-theme", currentTheme);
