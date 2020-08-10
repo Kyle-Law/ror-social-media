@@ -7,9 +7,10 @@ class Friendship < ApplicationRecord
   validates_presence_of :user_id, :friend_id
   validates :user_id, uniqueness: {  scope: :friend_id,case_sensitive: false }
 
-  has_many :confirmed_friends, through: :friendships, source: :friend
-  has_many :inverse_friends, through: :friendships, source: :user
+  # has_many :confirmed_friends, through: :friendships, source: :friend
+  # has_many :inverse_friends, through: :friendships, source: :user
 
+  
   def accept
     update(status: true)
     create_reverse_relationship

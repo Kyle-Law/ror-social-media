@@ -5,7 +5,8 @@ class FriendshipsController < ApplicationController
 
 
   def create
-    @friend = current_user.friendships.build(friend_id: params[:id], status: false)
+    @friend = current_user.friendships.build(friend_id: params[:friend_id], status: false)
+    @friend.save
     if @friend.save
       redirect_to users_path, notice: 'friend request sent sucessfully!'
     else
