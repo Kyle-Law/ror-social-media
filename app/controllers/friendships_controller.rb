@@ -18,17 +18,13 @@ class FriendshipsController < ApplicationController
     @friendship = Friendship.find(params[:id])
     @friendship.update(status: true)
     @friendship2 = Friendship.create(user_id: current_user.id, friend_id: @friendship.user_id, status: true)
-    redirect_to users_path, alert: 'Friend Accepted!'
+    redirect_to users_path, notice: 'Friend Accepted!'
   end
 
   def destroy
     @friend = Friendship.find_by(user_id: current_user.id, friend_id: params[:id])
     @friend ||= Friendship.find_by(user_id: params[:id], friend_id: current_user.id)
     @friend.destroy
-    if @friend.destroy && @friend.status
-      redirect_to users_path, notice: 'Successfully unfriended!'
-    elsif @friend.destroy && !@friend.status  
-      redirect_to users_path, notice: 'Successfully cancelled request!'
-    end
+    redirect_to users_path, notice: 'Request Ignored!'
   end
 end
