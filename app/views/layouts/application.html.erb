@@ -2,27 +2,47 @@
 <html>
   <head>
     <title>RorSocialScaffold</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <nav class="nav">
-      <%= link_to 'Stay in touch', root_path %>
-      <div class="menu">
-        <div class="menu-item">
-          <%= menu_link_to 'Timeline', posts_path %>
-        </div>
-        <div class="menu-item">
-          <%= menu_link_to 'All users', users_path %>
+      <div class="left">
+        <%= link_to 'Stay in touch', root_path %>
+        <div class="menu">
+          <div class="menu-item">
+            <%= menu_link_to 'Timeline', posts_path %>
+          </div>
+          <div class="menu-item">
+            <%= menu_link_to 'All users', users_path %>
+          </div>
         </div>
       </div>
-      <% if current_user %>
-        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to 'Sign in', user_session_path %>
-      <% end %>
+      <!-- Dark Mode Switch -->
+      <div class="right">
+        <div class="theme-switch-wrapper">
+          <span id="toggle-icon">
+            <span class="toggle-text">Light Mode</span>
+            <i class="fas fa-sun"></i>
+          </span>
+          <label class="theme-switch">
+            <input type="checkbox" />
+            <div class="slider round"></div>
+          </label>
+        </div>
+
+        <% if current_user %>
+          <p><%=link_to current_user.name , current_user%></p>
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to 'Sign in', user_session_path %>
+        <% end %>
+      </div>
     </nav>
     <% if notice.present? %>
       <div class="notice">
@@ -37,5 +57,7 @@
     <main class="main">
       <%= yield %>
     </main>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </body>
 </html>
