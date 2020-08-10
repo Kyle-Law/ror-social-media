@@ -1,0 +1,11 @@
+<h1>All Friends</h1>
+<% @friendships.each do |friendship| %>
+  <div>
+    <div>
+      <h3><%= friendship.friend.name%></h3>
+    </div>
+    <div>
+      <%= button_to "Remove", friendship_path(friendship.id), method: :delete%>
+    </div>
+  </div>
+<% end %>

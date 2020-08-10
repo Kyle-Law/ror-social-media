@@ -1,12 +1,15 @@
 <section class="users-section">
   <ul class="users-list">
     <% @users.each do |user| %>
+      
       <li>
         Name: 
         <span class="profile-link">
           <%= link_to user.name,  user_path(user), class: 'profile-link' %>
-          <%= link_to 'Add Friend',  friends_path(receiver_id: user), class: 'add-friend-link' %>
-          Testing <%= user.id%> hehe<%= current_user.id%>
+          <% if user != current_user %>
+          <%= link_to "Add Friend", friendships_path(friend_id: user.id), method: :post%>
+          <% end %>
+
         </span>
       </li>
     <% end %>
