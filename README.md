@@ -2,6 +2,8 @@
 
 > A Simple Social Media Web App powered by Ruby on Rails and JavaScript.
 
+![image](https://user-images.githubusercontent.com/55923773/89916161-e1e6f180-dc29-11ea-8d10-ff56f5d6b9c8.png)
+
 ## Live Version
 
 View the live version [HERE](https://social-media-kyle.herokuapp.com/)
