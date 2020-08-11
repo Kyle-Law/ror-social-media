@@ -14,5 +14,5 @@
     password_confirmation: 'password'
   )
   user = User.find(index+1)
-  user.posts.create!(content: 'Hello! I am a testing post')
+  user.posts.create!(content: "Hello! I am a testing post by #{user.name}")
 end

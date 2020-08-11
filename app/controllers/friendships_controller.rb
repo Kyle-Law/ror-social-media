@@ -22,8 +22,7 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    @friend = Friendship.find_by(user_id: current_user.id, friend_id: params[:id])
-    @friend ||= Friendship.find_by(user_id: params[:id], friend_id: current_user.id)
+    @friend = Friendship.find(params[:id])
     @friend.destroy
     redirect_to users_path, alert: 'Request rejected!'
   end

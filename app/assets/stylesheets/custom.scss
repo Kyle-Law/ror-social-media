@@ -100,11 +100,13 @@ a {
   .form-control {
     width: 100%;
     border: 1px solid #999999;
-    height: 64px;
-    padding: 8px;
+    // height: 64px;
+    padding: 20px;
+    font-size: 1.1rem;
     margin: 4px 0;
     border-radius: 4px;
     background-color: var(--background);
+    color: var(--on-background);
   }
 
   .field_with_errors {
@@ -142,7 +144,8 @@ form {
       border: 1px solid #999999;
       border-radius: 4px;
       padding: 8px;
-      background-color: var(--on-background);
+      background-color: var(--background);
+      color: var(--on-background);
     }
 
     input[type="checkbox"] {
@@ -249,7 +252,7 @@ form {
   .post-comments-section {
     margin: 5px;
     width: 90%;
-    margin-left: 10%;
+    margin-left: 8%;
 
     .post-comments {
       position: relative;
@@ -260,7 +263,7 @@ form {
       padding: 10px;
 
       p {
-        font-size: 0.8em;
+        font-size: 1rem;
         width: 90%;
       }
 
@@ -293,6 +296,26 @@ form {
     h6 {
       margin: 0;
       padding: 0;
+    }
+
+    .pending {
+      color: var(--secondary-color);
+    }
+
+    .fren-btn {
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      background-color: var(--primary-color);
+      color: var(--on-background);
+      text-transform: uppercase;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .fren-btn:hover {
+      filter: brightness(0.9);
     }
   }
 
