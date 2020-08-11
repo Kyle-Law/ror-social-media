@@ -60,9 +60,7 @@ body {
 
 .toggle-text {
   position: relative;
-  // top: -4px;
-  // right: 5px;
-  color: var(--on-background);
+  border-bottom: 1px solid var(--primary-color);
 }
 
 .theme-switch {

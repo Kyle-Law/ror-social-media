@@ -317,6 +317,14 @@ form {
     .fren-btn:hover {
       filter: brightness(0.9);
     }
+
+    .profile-name {
+      border-bottom: 2px solid rgba(0, 0, 0, 0);
+    }
+
+    .profile-name:hover {
+      border-bottom: 2px solid var(--primary-color);
+    }
   }
 
   .profile-link {
