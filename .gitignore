@@ -28,4 +28,3 @@
 
 # Ignore Spec file as of now
 /spec/controllers
-/spec/models
