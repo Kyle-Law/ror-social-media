@@ -11,7 +11,6 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :friendships, dependent: :destroy
 
-  
   has_many :confirmed_friendships, -> { where(status: true) }, class_name: 'Friendship'
   has_many :friends, through: :confirmed_friendships
 
@@ -19,7 +18,6 @@ class User < ApplicationRecord
   has_many :pending_friends, through: :pending_friendships, source: :friend
 
   has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id'
-
 
   def sent_friend_requests
     Friendship.where(['user_id = ? and status = ?', id, false])

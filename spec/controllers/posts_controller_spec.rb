@@ -42,7 +42,7 @@ RSpec.describe PostsController, type: :feature do
       click_button 'Log in'
       expect(page).to have_content('Here is a content by user2')
     end
-    
+
     scenario 'cannot see posts if are not friends' do
       user2 = User.create(id: '2', name: 'sad', email: 'sad@gmail.com', password: 'password')
       visit new_user_session_path

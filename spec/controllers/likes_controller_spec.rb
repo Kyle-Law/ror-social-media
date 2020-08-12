@@ -3,7 +3,6 @@ require 'capybara/rspec'
 
 RSpec.describe LikesController, type: :feature do
   context 'Likes management' do
-    
     before :each do
       user = User.create(id: '1', name: 'tester1', email: 'tester1@example.com', password: 'password')
       visit new_user_session_path

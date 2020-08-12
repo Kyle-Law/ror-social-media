@@ -21,16 +21,14 @@ module ApplicationHelper
       content_tag(:span, class: 'pending') do
         'Pending Request'
       end
-    elsif current_user.friends.include?(user) 
+    elsif current_user.friends.include?(user)
       'Already Friend'
     elsif current_user == user
       'User'
-    else 
+    else
       content_tag(:button, class: 'fren-btn') do
-        link_to "Add Friend", friendships_path(friend_id: user.id), method: :post
+        link_to 'Add Friend', friendships_path(friend_id: user.id), method: :post
       end
-    end 
+    end
   end
-
-  
 end

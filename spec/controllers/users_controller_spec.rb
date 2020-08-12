@@ -12,8 +12,6 @@ RSpec.describe UsersController, type: :feature do
       click_button 'Log in'
     end
 
-    
-
     it 'Get #show' do
       visit user_path(user)
       expect(page).to have_content('Name:')
@@ -79,6 +77,4 @@ RSpec.describe UsersController, type: :feature do
       expect(page).to have_content('Add Friend')
     end
   end
-
-  
 end

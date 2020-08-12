@@ -3,7 +3,6 @@ class FriendshipsController < ApplicationController
     @friends = current_user.friendships.where(status: true)
   end
 
-
   def create
     @friend = current_user.friendships.build(friend_id: params[:friend_id], status: false)
     @friend.save

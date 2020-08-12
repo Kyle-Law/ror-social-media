@@ -3,7 +3,6 @@ require 'capybara/rspec'
 
 RSpec.describe CommentsController, type: :feature do
   context 'Comments management' do
-
     before :each do
       user = User.create(id: '1', name: 'comment-tester', email: 'comment-tester@example.com', password: 'password')
       visit new_user_session_path
@@ -14,7 +13,7 @@ RSpec.describe CommentsController, type: :feature do
       fill_in 'post_content', with: 'Post testing'
       click_button 'Save'
     end
-    
+
     it 'creates comment in a post' do
       visit root_path
       fill_in 'comment_content', with: 'first comment'
