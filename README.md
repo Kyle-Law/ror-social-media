@@ -12,6 +12,7 @@ View the live version [HERE](https://social-media-kyle.herokuapp.com/)
 
 - Ruby
 - Ruby on Rails
+- JavaScript
 
 ## Authors
 
