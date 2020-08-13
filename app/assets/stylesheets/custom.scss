@@ -1,25 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
 
-$primary-color-dark: #689f38;
-$primary-color: #8bc34a;
-$primary-color-light: #dcedc8;
-$primary-color-text: #212121;
-$divider-color: #bdbdbd;
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-}
-
-body {
-  background: #fff;
-  position: relative;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-}
-
 h1,
 h2,
 h3 {
@@ -28,32 +8,40 @@ h3 {
 
 ul {
   list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 a {
   text-decoration: none;
-  color: $primary-color-text;
+  color: var(--on-background);
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   padding: 16px 48px;
-  background-color: $primary-color-dark;
-  color: $primary-color-light;
+  align-items: center;
+  // background-color: var(--primary-color);
+  color: var(--on-background);
 
   a {
-    color: $primary-color-light;
+    letter-spacing: 2px;
+    color: var(--on-background);
     text-transform: uppercase;
     font-weight: 900;
+    border-bottom: 3px solid rgba(0, 0, 0, 0);
   }
 
   .active a {
-    color: #fff;
+    // color: #fff;
+    border-bottom: 3px solid var(--primary-color);
   }
 
-  a:hover {
-    color: #fff;
+  .menu-item a:hover {
+    // color: #fff;
+    // filter: brightness(0.9);
+    border-bottom: 3px solid var(--primary-color);
   }
 
   .menu {
@@ -111,11 +99,14 @@ a {
 
   .form-control {
     width: 100%;
-    border: 1px solid $divider-color;
-    height: 64px;
-    padding: 8px;
+    border: 1px solid #999999;
+    // height: 64px;
+    padding: 20px;
+    font-size: 1.1rem;
     margin: 4px 0;
     border-radius: 4px;
+    background-color: var(--background);
+    color: var(--on-background);
   }
 
   .field_with_errors {
@@ -150,10 +141,11 @@ form {
 
     input {
       width: 100%;
-      border: 1px solid $divider-color;
+      border: 1px solid #999999;
       border-radius: 4px;
       padding: 8px;
-      background-color: $primary-color-light;
+      background-color: var(--background);
+      color: var(--on-background);
     }
 
     input[type="checkbox"] {
@@ -172,15 +164,17 @@ form {
     width: 50%;
     border: none;
     border-radius: 4px;
-    background-color: $primary-color-dark;
-    color: $primary-color-light;
+    background-color: var(--primary-color);
+    color: var(--on-background);
     text-transform: uppercase;
     font-weight: 900;
+    cursor: pointer;
   }
 
   input[type="submit"]:hover {
-    background-color: $primary-color;
+    // background-color: var(--secondary-color);
     color: #fff;
+    filter: brightness(0.99);
   }
 
   .actions.reset {
@@ -197,11 +191,14 @@ form {
 }
 
 .timeline {
+  padding: 20px 50px;
+  border-radius: 10px;
   width: 100%;
   margin: 16px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--on-background-alt);
 
   h3 {
     margin: 8px 0;
@@ -212,10 +209,13 @@ form {
   }
 
   .post {
-    width: 100%;
     margin: 16px 0;
     display: flex;
     flex-direction: column;
+    border: 1px solid var(--on-background);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--box-shadow);
   }
 
   .post-attribution {
@@ -223,16 +223,17 @@ form {
 
     .post-author {
       margin: 0 0 8px 0;
-      color: $primary-color-dark;
+      color: var(--primary-color);
       text-transform: capitalize;
     }
   }
 
   .post-liking {
     float: right;
+    font-size: 1.2rem;
 
     a {
-      color: $primary-color-dark;
+      color: var(--primary-color);
       font-weight: bold;
       font-size: 0.9em;
       margin: 0 4px;
@@ -251,18 +252,18 @@ form {
   .post-comments-section {
     margin: 5px;
     width: 90%;
-    margin-left: 10%;
+    margin-left: 8%;
 
     .post-comments {
       position: relative;
       display: flex;
-      border-bottom: 1px solid $divider-color;
+      border-bottom: 1px solid #999999;
       border-radius: 3px;
       margin-bottom: 2px;
       padding: 10px;
 
       p {
-        font-size: 0.8em;
+        font-size: 1rem;
         width: 90%;
       }
 
@@ -279,16 +280,57 @@ form {
   width: 100%;
   margin: 10px;
 
+  .users-list {
+    padding: 20px 50px;
+    border-radius: 10px;
+    width: 100%;
+    background-color: var(--on-background-alt);
+  }
+
   .users-list li {
     margin-bottom: 16px;
     text-transform: capitalize;
     font-size: 1.2em;
+    color: var(--primary-color);
+
+    h6 {
+      margin: 0;
+      padding: 0;
+    }
+
+    .pending {
+      color: var(--secondary-color);
+    }
+
+    .fren-btn {
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      background-color: var(--primary-color);
+      color: var(--on-background);
+      text-transform: uppercase;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .fren-btn:hover {
+      filter: brightness(0.9);
+    }
+
+    .profile-name {
+      border-bottom: 2px solid rgba(0, 0, 0, 0);
+    }
+
+    .profile-name:hover {
+      border-bottom: 2px solid var(--primary-color);
+    }
   }
 
   .profile-link {
     font-size: 0.8em;
     margin: 0 0 8px 0;
-    color: $primary-color-dark;
+    color: var(--primary-color);
   }
 }
 
@@ -313,7 +355,7 @@ form {
 
 #error_explanation {
   h2 {
-    color: $primary-color-text;
+    color: var(--secondary-color)-text;
     font-size: 1em;
   }
 

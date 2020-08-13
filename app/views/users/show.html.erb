@@ -1,5 +1,29 @@
 <section class="user-section">
   <h2><%= "Name: #{@user.name}" %></h2>
+  <h3>All Friends</h3>
+  <% @user.friends.map do |fren|%>
+    <p><%= fren.name %></p>
+  <%end%>
+  <h3>All Friends Requests </h3>
+  <ul class="friends-list">
+    <% @incoming_friend_requests.each do |r| %>
+    <div>
+      <h3><%= r.user.name %></h3>
+    </div>
+    <div>
+      <div class="row">
+        <% if r.friend %>
+          <div>
+            <%= button_to "Accept", friendship_path(r.id), :method => :patch %>
+          </div>
+          <div>
+            <%= button_to "Reject", friendship_path(r.id), method: :delete %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+  </ul> 
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">

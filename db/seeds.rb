@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+20.times do |index|
+  email = "example-#{index+1}@gmail.com"
+  User.create!(
+    name: Faker::Artist.name,
+    email: email,
+    password: 'password',
+    password_confirmation: 'password'
+  )
+  user = User.find(index+1)
+  user.posts.create!(content: "Hello! I am a testing post by #{user.name}")
+end
