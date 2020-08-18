@@ -17,7 +17,7 @@ class User < ApplicationRecord
   has_many :pending_friendships, -> { where status: false }, class_name: 'Friendship', foreign_key: 'user_id'
   has_many :pending_friends, through: :pending_friendships, source: :friend
 
-  has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id'
+  has_many :inverse_friendships, -> { where status: false }, class_name: "Friendship", foreign_key: "friend_id"
 
   def sent_friend_requests
     Friendship.where(['user_id = ? and status = ?', id, false])
