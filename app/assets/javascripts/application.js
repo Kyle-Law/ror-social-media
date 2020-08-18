@@ -10,22 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-console.log("reset js");
 var toggleSwitch = document.querySelector('input[type="checkbox"]');
 var nav = document.getElementById("nav");
 var toggleIcon = document.getElementById("toggle-icon");
-// var textBox = document.getElementById("post-content");
-
-// Dark or Light Images
-// function imageMode(color) {
-//   image1.src = `img/undraw_proud_coder_${color}.svg`;
-//   image2.src = `img/undraw_feeling_proud_${color}.svg`;
-//   image3.src = `img/undraw_conceptual_idea_${color}.svg`;
-// }
 
 // Dark Mode Styles
 function darkMode() {
