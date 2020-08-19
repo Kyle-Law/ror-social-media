@@ -17,6 +17,21 @@ a {
   color: var(--on-background);
 }
 
+.nav a {
+  letter-spacing: 2px;
+  color: var(--on-background);
+  text-transform: uppercase;
+  font-weight: 900;
+  border-bottom: 3px solid rgba(0, 0, 0, 0);
+}
+
+.timeline .post-liking a {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 0.9em;
+  margin: 0 4px;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -25,22 +40,11 @@ a {
   // background-color: var(--primary-color);
   color: var(--on-background);
 
-  a {
-    letter-spacing: 2px;
-    color: var(--on-background);
-    text-transform: uppercase;
-    font-weight: 900;
-    border-bottom: 3px solid rgba(0, 0, 0, 0);
-  }
-
   .active a {
-    // color: #fff;
     border-bottom: 3px solid var(--primary-color);
   }
 
   .menu-item a:hover {
-    // color: #fff;
-    // filter: brightness(0.9);
     border-bottom: 3px solid var(--primary-color);
   }
 
@@ -99,7 +103,7 @@ a {
 
   .form-control {
     width: 100%;
-    border: 1px solid #999999;
+    border: 1px solid #999;
     // height: 64px;
     padding: 20px;
     font-size: 1.1rem;
@@ -141,7 +145,7 @@ form {
 
     input {
       width: 100%;
-      border: 1px solid #999999;
+      border: 1px solid #999;
       border-radius: 4px;
       padding: 8px;
       background-color: var(--background);
@@ -172,7 +176,6 @@ form {
   }
 
   input[type="submit"]:hover {
-    // background-color: var(--secondary-color);
     color: #fff;
     filter: brightness(0.99);
   }
@@ -232,13 +235,6 @@ form {
     float: right;
     font-size: 1.2rem;
 
-    a {
-      color: var(--primary-color);
-      font-weight: bold;
-      font-size: 0.9em;
-      margin: 0 4px;
-    }
-
     .post-date {
       font-size: 0.6em;
     }
@@ -257,7 +253,7 @@ form {
     .post-comments {
       position: relative;
       display: flex;
-      border-bottom: 1px solid #999999;
+      border-bottom: 1px solid #999;
       border-radius: 3px;
       margin-bottom: 2px;
       padding: 10px;
@@ -355,7 +351,7 @@ form {
 
 #error_explanation {
   h2 {
-    color: var(--secondary-color)-text;
+    color: var(--secondary-color) -text;
     font-size: 1em;
   }
 
