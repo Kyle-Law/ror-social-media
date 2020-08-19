@@ -1,6 +1,6 @@
-let toggleSwitch = document.querySelector('input[type="checkbox"]');
-let nav = document.getElementById("nav");
-let toggleIcon = document.getElementById("toggle-icon");
+var toggleSwitch = document.querySelector('input[type="checkbox"]');
+var nav = document.getElementById("nav");
+var toggleIcon = document.getElementById("toggle-icon");
 
 // Dark Mode Styles
 function darkMode() {
@@ -39,7 +39,7 @@ function switchTheme(event) {
 toggleSwitch.addEventListener("change", switchTheme);
 
 // Check Local Storage for Theme
-let currentTheme = localStorage.getItem("theme");
+var currentTheme = localStorage.getItem("theme");
 
 if (currentTheme) {
   document.documentElement.setAttribute("data-theme", currentTheme);
