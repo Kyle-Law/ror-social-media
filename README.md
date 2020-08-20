@@ -14,6 +14,21 @@ View the live version [HERE](https://social-media-kyle.herokuapp.com/)
 - Ruby on Rails
 - JavaScript
 
+## Deployment
+
+1. Clone the repo
+2. Run `bundle install` to install Ruby gems
+3. Run `rails db:create` to create the database
+4. Run `rails db:setup` to migrate and seed the database.
+5. Run `rails s` and open up `http://localhost:3000/`
+
+## Testing
+
+1. Run `bundle install`
+2. Run `rails db:create` and `rails db:setup`
+3. Run `rspec`
+4. `26 examples, 0 failures` shall be shown.
+
 ## Authors
 
 👤 **Kyle Law**
