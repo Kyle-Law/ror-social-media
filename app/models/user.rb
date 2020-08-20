@@ -28,9 +28,6 @@ class User < ApplicationRecord
   end
 
   def circle_posts
-    friends_array = friendships.map { |friendship| friendship.friend if friendship.status }
-    friends_array.concat(inverse_friendships.map { |friendship| friendship.user if friendship.status })
-    friends_array = friends_array.compact.concat([id])
-    Post.where(user: friends_array).ordered_by_most_recent
+    Post.where(user: (self.friends + self))
   end
 end
