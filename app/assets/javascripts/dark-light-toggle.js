@@ -4,7 +4,6 @@ var toggleIcon = document.getElementById("toggle-icon");
 
 // Dark Mode Styles
 function darkMode() {
-  console.log("nav", nav);
   nav.style.backgroundColor = "rgb(0 0 0 / 50%)";
   toggleIcon.children[0].textContent = "Dark Mode";
   toggleIcon.children[1].classList.replace("fa-sun", "fa-moon");
